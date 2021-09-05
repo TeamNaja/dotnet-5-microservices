@@ -1,7 +1,6 @@
-﻿using Grpc.Core;
-
-namespace Discount.Grpc.Services
+﻿namespace Discount.Grpc.Services
 {
+    using global::Grpc.Core;
     using AutoMapper;
     using Discount.Entity.Entities;
     using Discount.Entity.Repositories;
@@ -28,8 +27,8 @@ namespace Discount.Grpc.Services
         public override async Task<CouponModel> GetDiscount(GetDiscountRequest request, ServerCallContext context)
         {
             var coupon = await discountRepository.GetDiscountAsync(request.ProductName);
-            
-            if(coupon is null)
+
+            if (coupon is null)
             {
                 throw new RpcException(new Status(StatusCode.NotFound, $"Discount with ProductName={request.ProductName} is not found."));
             }

@@ -1,16 +1,15 @@
-﻿using Catalog.API.Entities;
-using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-
-namespace Catalog.API.Data
+﻿namespace Catalog.API.Data
 {
+    using Catalog.API.Entities;
+    using MongoDB.Driver;
+    using System.Collections.Generic;
+
     public class CatalogContextSeed
     {
         public static void SeedData(IMongoCollection<Product> productCollection)
         {
             bool existProduct = productCollection.Find(p => true).Any();
-            if(!existProduct)
+            if (!existProduct)
             {
                 productCollection.InsertManyAsync(GetPreconfiguredProducts());
             }

@@ -52,6 +52,8 @@
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> DeleteDiscount(string productName, CancellationToken cancellationToken = default)
         {
+            logger.LogInformation($"Delete discount by Product name: { productName }");
+
             return this.Ok(await discountRepository.DeleteDiscountAsync(productName, cancellationToken));
         }
     }

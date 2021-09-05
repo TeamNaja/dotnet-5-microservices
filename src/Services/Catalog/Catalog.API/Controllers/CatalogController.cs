@@ -40,7 +40,7 @@
         {
             var product = await productRepository.GetProductByIdAsync(id, cancellationToken);
 
-            if(product is null)
+            if (product is null)
             {
                 logger.LogError($"Product with id: {id}, not found.");
                 return this.NotFound();
