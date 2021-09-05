@@ -2,7 +2,8 @@
 ตัวอย่างการทำ Microservices 
 
 หลักๆ ใช้ 
-- .NET 5 CQRS + Repository Pattern 
+- .NET 5 CQRS + MediatR + DDD + Repository Pattern 
+- FluentValidator
 - Ocelot Api Gateway
 - Rabbit MQ & Mass transit
 - gRPC
